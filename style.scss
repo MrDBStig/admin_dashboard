@@ -5,6 +5,8 @@
 $sidebar-bg: #5b21b6;
 $text-white: #fafafa;
 $text-black: #1f1f1f;
+$input-dark-grey-text: #1f2937;
+$light-gray-bg: #e2e8f0;
 
 // GENERAL
 html {
@@ -19,6 +21,7 @@ body {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(8, 1fr);
+  color: $text-black;
 }
 
 *,
@@ -29,21 +32,152 @@ body {
   box-sizing: inherit;
 }
 
+::-moz-selection {
+  background-color: $text-white;
+  color: $sidebar-bg;
+}
+
+::selection {
+  background-color: $text-white;
+  color: $sidebar-bg;
+}
+
+// HEADER
+.header {
+  grid-area: 1 / 3 / 3 / 11;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: $text-white;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  padding-bottom: 2rem;
+
+  .section {
+    &__search {
+      grid-area: 1 / 1 / 2 / 6;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      span {
+        display: inline-block;
+        font-size: 3rem;
+        cursor: pointer;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        background-color: $light-gray-bg;
+        border-radius: 9px;
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        width: 100%;
+        color: $input-dark-grey-text;
+
+        &::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+        }
+      }
+    }
+
+    &__account {
+      grid-area: 1 / 6 / 2 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 4rem;
+      gap: 3.6rem;
+
+      span {
+        font-size: 3rem;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+
+      &__name {
+        font-size: 2.2rem;
+      }
+    }
+
+    &__greeting {
+      grid-area: 2 / 1 / 2 / 5;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      img {
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+      }
+
+      &__content {
+        .greeting {
+          font-size: 1.6rem;
+        }
+
+        .name {
+          font-size: 2.8rem;
+        }
+      }
+    }
+
+    &__actions {
+      grid-area: 2 / 5 / 2 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 4rem;
+      gap: 4rem;
+
+      .btn-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        outline: none;
+        border: none;
+        border-radius: 999px;
+        padding: 1.2rem 2.4rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $text-white;
+        background-color: $sidebar-bg;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main {
+  grid-area: 3 / 3 / 9 / 11;
+  background-color: $light-gray-bg;
+}
+
 // SIDEBAR
 .sidebar {
   grid-area: 1 / 1 / 9 / 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 6rem;
+  gap: 8rem;
   color: $text-white;
-  padding: 2rem;
+  padding: 3rem;
   background-color: $sidebar-bg;
 
   &-item--primary {
     display: flex;
     align-items: center;
     align-self: flex-start;
+    padding-top: 1rem;
     gap: 1rem;
 
     &__title {
