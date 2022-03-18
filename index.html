@@ -12,8 +12,43 @@
     <link rel="stylesheet" href="/src/css/style.css" />
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="section__search">
+        <span class="material-icons"> search </span>
+        <input
+          type="search"
+          name="search"
+          id="section__search__input"
+          placeholder="Search dashboard"
+        />
+      </div>
+      <div class="section__account">
+        <span class="material-icons"> notifications_active </span>
+        <img src="/src/img/profile.jpg" alt="Profile photo" />
+        <h5 class="section__account__name">Mikita Kavaleuski</h5>
+      </div>
+      <div class="section__greeting">
+        <img src="/src/img/profile.jpg" alt="Profile photo" />
+        <div class="section__greeting__content">
+          <p class="greeting">Hey there,</p>
+          <h2 class="name">Mikita Kavaleuski</h2>
+        </div>
+      </div>
+      <div class="section__actions">
+        <button class="btn-action">
+          <span class="material-icons"> add </span> New
+        </button>
+        <button class="btn-action">
+          <span class="material-icons"> file_upload </span> Upload
+        </button>
+        <button class="btn-action">
+          <span class="material-icons"> share </span> Share
+        </button>
+      </div>
+    </header>
+
     <main class="main"></main>
+
     <aside class="sidebar">
       <div class="sidebar-item--primary">
         <span class="sidebar-item--primary__icon material-icons">
