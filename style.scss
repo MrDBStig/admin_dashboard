@@ -1,6 +1,24 @@
+// FONT
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+
+// VARIABLES
+$sidebar-bg: #5b21b6;
+$text-white: #fafafa;
+$text-black: #1f1f1f;
+
+// GENERAL
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 
 *,
@@ -9,4 +27,55 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+// SIDEBAR
+.sidebar {
+  grid-area: 1 / 1 / 9 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6rem;
+  color: $text-white;
+  padding: 2rem;
+  background-color: $sidebar-bg;
+
+  &-item--primary {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 1rem;
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__icon {
+      font-size: 4rem;
+    }
+  }
+
+  .navitagion,
+  .additional {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 1rem;
+      padding: 0 1rem;
+      cursor: pointer;
+
+      &__title {
+        font-size: 2.4rem;
+      }
+
+      &__icon {
+        font-size: 2.4rem;
+      }
+    }
+  }
 }
